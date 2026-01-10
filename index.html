@@ -173,9 +173,14 @@ box-shadow:0 0 8px #00f2ff;
 
 <div class="card">
 <h2>Crypto & Market Predictions</h2>
-<a href="https://t.me/joinchat/kWUiol3Ff2M0MjM1" class="btn">JOIN TELEGRAM</a>
+
+<!-- BUTTON 1 -->
+<a href="https://t.me/joinchat/kWUiol3Ff2M0MjM1" class="btn">
+JOIN TELEGRAM
+</a>
+
 <div class="warning">
-FREE JOINING ENDS IN <span id="timer">10</span> SEC
+FREE JOINING ENDS IN <span id="timer">20</span> SEC
 </div>
 </div>
 
@@ -193,8 +198,11 @@ FREE JOINING ENDS IN <span id="timer">10</span> SEC
 Trusted by thousands of crypto lovers across India
 </div>
 
+<!-- BUTTON 2 -->
 <div class="join-below">
-<a href="https://t.me/joinchat/kWUiol3Ff2M0MjM1">अभी टेलीग्राम जॉइन करें</a>
+<a href="https://t.me/joinchat/kWUiol3Ff2M0MjM1">
+अभी टेलीग्राम जॉइन करें
+</a>
 </div>
 
 <div class="ads-box">
@@ -205,15 +213,13 @@ Trusted by thousands of crypto lovers across India
 </div>
 
 <script>
-let time = 10;
+let time = 20;
 const timer = document.getElementById("timer");
 
-const interval = setInterval(()=>{
+setInterval(()=>{
+if(time > 0){
 time--;
-timer.innerText=time;
-if(time <= 0){
-clearInterval(interval);
-location.href = "https://t.me/joinchat/kWUiol3Ff2M0MjM1";
+timer.innerText = time;
 }
 },1000);
 </script>
