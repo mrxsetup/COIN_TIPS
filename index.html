@@ -13,18 +13,15 @@ box-sizing:border-box;
 font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
 }
 
-/* FULL PAGE BACKGROUND */
-html, body{
+html,body{
 width:100%;
 height:100%;
 }
 
 body{
-background-image:url("https://raw.githubusercontent.com/mrxsetup/COIN_TIPS/main/PAGEBACK.jpg");
-background-repeat:no-repeat;
-background-position:center center;
+background:url("https://raw.githubusercontent.com/mrxsetup/COIN_TIPS/main/PAGEBACK.jpg")
+no-repeat center center fixed;
 background-size:cover;
-background-attachment:fixed;
 color:#fff;
 }
 
@@ -36,13 +33,13 @@ box-shadow:0 0 18px #00f2ff,inset 0 0 22px #00f2ff;
 display:flex;
 justify-content:center;
 align-items:flex-start;
-padding-top:20px;
+padding-top:18px;
 }
 
 .container{
 max-width:420px;
 width:100%;
-padding:18px 16px 20px;
+padding:16px;
 }
 
 /* PROFILE */
@@ -79,7 +76,11 @@ box-shadow:0 0 12px #00f2ff;
 text-align:center;
 }
 
-.card h2{color:#12d8fa;margin-bottom:6px;font-size:1.2rem}
+.card h2{
+color:#12d8fa;
+margin-bottom:6px;
+font-size:1.2rem;
+}
 
 .btn{
 display:block;
@@ -95,11 +96,13 @@ margin-top:10px;
 }
 @keyframes zoom{50%{transform:scale(1.07)}}
 
+/* TIMER */
 .warning{
 margin-top:8px;
 padding:8px;
 border-radius:8px;
 background:#ff0000;
+color:#fff;
 font-weight:900;
 animation:vibrate .2s infinite;
 box-shadow:0 0 15px red;
@@ -113,10 +116,14 @@ font-size:0.9rem;
 100%{transform:translateX(0)}
 }
 
-.features{list-style:none;margin-top:6px;font-size:0.95rem}
+.features{
+list-style:none;
+margin-top:6px;
+font-size:0.95rem;
+}
 .features li::before{content:"⚡ ";color:#00f2ff}
 
-/* TRUST + BUTTON */
+/* TRUST */
 .trust{
 margin:8px 0 6px;
 font-weight:700;
@@ -125,12 +132,7 @@ text-shadow:0 0 8px #12d8fa;
 font-size:0.95rem;
 }
 
-.join-below{
-margin-top:6px;
-text-align:center;
-}
-
-/* JOIN BUTTON INSIDE FRAME */
+/* BOTTOM JOIN */
 .join-below a{
 display:block;
 padding:14px;
@@ -144,7 +146,10 @@ animation:zoom 1.5s infinite;
 }
 
 /* ADS */
-.ads-box{text-align:center;margin-top:10px;}
+.ads-box{
+text-align:center;
+margin-top:10px;
+}
 .ads-box span{
 padding:4px 10px;
 font-size:11px;
@@ -168,7 +173,7 @@ box-shadow:0 0 8px #00f2ff;
 
 <div class="card">
 <h2>Crypto & Market Predictions</h2>
-<a href="https://t.me/+kWUiol3Ff2M0MjM1" class="btn">JOIN TELEGRAM</a>
+<a href="https://t.me/joinchat/kWUiol3Ff2M0MjM1" class="btn">JOIN TELEGRAM</a>
 <div class="warning">
 FREE JOINING ENDS IN <span id="timer">10</span> SEC
 </div>
@@ -189,7 +194,7 @@ Trusted by thousands of crypto lovers across India
 </div>
 
 <div class="join-below">
-<a href="https://t.me/+kWUiol3Ff2M0MjM1">अभी टेलीग्राम जॉइन करें</a>
+<a href="https://t.me/joinchat/kWUiol3Ff2M0MjM1">अभी टेलीग्राम जॉइन करें</a>
 </div>
 
 <div class="ads-box">
@@ -202,11 +207,13 @@ Trusted by thousands of crypto lovers across India
 <script>
 let time = 10;
 const timer = document.getElementById("timer");
-setInterval(()=>{
+
+const interval = setInterval(()=>{
 time--;
 timer.innerText=time;
-if(time<=0){
-location.href="https://t.me/+kWUiol3Ff2M0MjM1";
+if(time <= 0){
+clearInterval(interval);
+location.href = "https://t.me/joinchat/kWUiol3Ff2M0MjM1";
 }
 },1000);
 </script>
