@@ -19,8 +19,7 @@ height:100%;
 }
 
 body{
-background:url("https://raw.githubusercontent.com/mrxsetup/COIN_TIPS/main/PAGEBACK.jpg")
-no-repeat center center fixed;
+background:#000 url("https://raw.githubusercontent.com/mrxsetup/COIN_TIPS/main/PAGEBACK.jpg") no-repeat center center;
 background-size:cover;
 color:#fff;
 }
@@ -33,33 +32,35 @@ box-shadow:0 0 18px #00f2ff,inset 0 0 22px #00f2ff;
 display:flex;
 justify-content:center;
 align-items:flex-start;
-padding-top:18px;
+padding:16px 10px;
 }
 
 .container{
 max-width:420px;
 width:100%;
-padding:16px;
 }
 
 /* PROFILE */
-.profile-box{text-align:center;margin-bottom:14px;}
+.profile-box{
+text-align:center;
+margin-bottom:12px;
+}
 .profile-box img{
-width:120px;
-height:120px;
+width:110px;
+height:110px;
 border-radius:50%;
 border:3px solid #00f2ff;
 box-shadow:0 0 20px #00f2ff,0 0 45px #00f2ff;
 }
 
 .name-box{
+margin-top:8px;
 display:inline-block;
-margin-top:10px;
 padding:8px 22px;
 border:2px solid #00f2ff;
-background:rgba(0,0,0,.6);
+background:rgba(0,0,0,.65);
 color:#00f2ff;
-font-size:1.6rem;
+font-size:1.5rem;
 font-weight:900;
 letter-spacing:2px;
 box-shadow:0 0 15px #00f2ff;
@@ -70,7 +71,7 @@ box-shadow:0 0 15px #00f2ff;
 margin-bottom:12px;
 padding:14px;
 border-radius:14px;
-background:rgba(0,0,0,.55);
+background:rgba(0,0,0,.6);
 border:1px solid #00f2ff;
 box-shadow:0 0 12px #00f2ff;
 text-align:center;
@@ -79,10 +80,11 @@ text-align:center;
 .card h2{
 color:#12d8fa;
 margin-bottom:6px;
-font-size:1.2rem;
+font-size:1.15rem;
 }
 
-.btn{
+/* BUTTON */
+.btn,.join-below a{
 display:block;
 padding:14px;
 border-radius:40px;
@@ -91,10 +93,13 @@ color:#000;
 font-weight:900;
 text-decoration:none;
 box-shadow:0 0 25px #00f2ff;
-animation:zoom 1.5s infinite;
+animation:pulse 1.5s infinite;
 margin-top:10px;
 }
-@keyframes zoom{50%{transform:scale(1.07)}}
+
+@keyframes pulse{
+50%{transform:scale(1.07)}
+}
 
 /* TIMER */
 .warning{
@@ -108,6 +113,7 @@ animation:vibrate .2s infinite;
 box-shadow:0 0 15px red;
 font-size:0.9rem;
 }
+
 @keyframes vibrate{
 0%{transform:translateX(0)}
 25%{transform:translateX(-2px)}
@@ -116,47 +122,44 @@ font-size:0.9rem;
 100%{transform:translateX(0)}
 }
 
+/* FEATURES */
 .features{
 list-style:none;
 margin-top:6px;
 font-size:0.95rem;
 }
-.features li::before{content:"⚡ ";color:#00f2ff}
+.features li::before{
+content:"⚡ ";
+color:#00f2ff;
+}
 
 /* TRUST */
 .trust{
-margin:8px 0 6px;
+margin:10px 0 8px;
 font-weight:700;
 text-align:center;
 text-shadow:0 0 8px #12d8fa;
 font-size:0.95rem;
 }
 
-/* BOTTOM JOIN */
-.join-below a{
-display:block;
-padding:14px;
-border-radius:40px;
-background:#12d8fa;
-color:#000;
-font-weight:900;
-text-decoration:none;
-box-shadow:0 0 25px #12d8fa;
-animation:zoom 1.5s infinite;
-}
-
-/* ADS */
+/* ADS CLICKABLE USER */
 .ads-box{
 text-align:center;
-margin-top:10px;
+margin-top:12px;
 }
-.ads-box span{
+.ads-box a{
+display:inline-block;
 padding:4px 10px;
 font-size:11px;
 border-radius:6px;
 border:1px solid #00f2ff;
 color:#00f2ff;
 box-shadow:0 0 8px #00f2ff;
+text-decoration:none;
+}
+.ads-box a:hover{
+background:#00f2ff;
+color:#000;
 }
 </style>
 </head>
@@ -174,8 +177,7 @@ box-shadow:0 0 8px #00f2ff;
 <div class="card">
 <h2>Crypto & Market Predictions</h2>
 
-<!-- BUTTON 1 -->
-<a href="https://t.me/joinchat/kWUiol3Ff2M0MjM1" class="btn">
+<a href="https://t.me/+kWUiol3Ff2M0MjM1" class="btn">
 JOIN TELEGRAM
 </a>
 
@@ -198,15 +200,17 @@ FREE JOINING ENDS IN <span id="timer">20</span> SEC
 Trusted by thousands of crypto lovers across India
 </div>
 
-<!-- BUTTON 2 -->
 <div class="join-below">
-<a href="https://t.me/joinchat/kWUiol3Ff2M0MjM1">
+<a href="https://t.me/+kWUiol3Ff2M0MjM1">
 अभी टेलीग्राम जॉइन करें
 </a>
 </div>
 
+<!-- CLICKABLE USER -->
 <div class="ads-box">
-<span>Ads-Setup By @CAPTAIN4433</span>
+<a href="https://t.me/CAPTAIN4433" target="_blank">
+Ads-Setup By @CAPTAIN4433
+</a>
 </div>
 
 </div>
@@ -216,10 +220,12 @@ Trusted by thousands of crypto lovers across India
 let time = 20;
 const timer = document.getElementById("timer");
 
-setInterval(()=>{
+const countdown = setInterval(()=>{
 if(time > 0){
 time--;
 timer.innerText = time;
+}else{
+clearInterval(countdown);
 }
 },1000);
 </script>
